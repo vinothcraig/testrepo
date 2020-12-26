@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+    name: appsvol
+    labels:
+      type: local
+spec:
+    storageClassName: manual 
+    capacity:
+      storage: 6Gi
+    accessModes:
+      - ReadWriteOnce 
+    persistentVolumeReclaimPolicy: Retain
+    hostPath:
+      path: "/backup" 
